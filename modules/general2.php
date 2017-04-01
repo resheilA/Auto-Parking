@@ -29,6 +29,16 @@ function select($tablename,$condition,$fetch){
 return $value;
 }
 
+function authenticate($username, $password){
+echo $status = select("user", "username='$username'", "Password");
+if($status == md5($password)){
+return true;
+}
+else{
+return false;
+}
+}
+
 function alloweddomains($username){
 $alloweddomains = select("user", "username='$username'", "Allowed");
 return $alloweddomains;
@@ -64,8 +74,19 @@ $status = select("user", "username='$username'", "Blocked");
 return $status;
 }
 
+
+/*
+$stat = authenticate("resheil", "mick");
+if($stat){
+echo "Successful";
+}
+else{
+echo "failure";
+}
+
 echo checkblockuser("resheil");
 echo getusername("webportal.in");
 echo getdeletiondate("webportal.in");
 echo alloweddomains("resheil");
+*/
 ?>

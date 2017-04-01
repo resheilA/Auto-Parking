@@ -65,6 +65,7 @@ function addcredits($username, $credits){
 update("user", "Allowed", $credits, "Username = '$username'");
 }
 
+
 //addcredits("Resheil", 10);
 //renewdomain("hacker.in","1");   ---- Check renew domains
 ?>
