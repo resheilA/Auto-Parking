@@ -1,5 +1,6 @@
 <?php 
-include("database/connectdb.php");
+
+include_once("database/connectdb.php");
 
 function select($tablename,$condition,$fetch){
  connectdb();
@@ -30,7 +31,7 @@ return $value;
 }
 
 function authenticate($username, $password){
-echo $status = select("user", "username='$username'", "Password");
+$status = select("user", "username='$username'", "Password");
 if($status == md5($password)){
 return true;
 }
@@ -44,6 +45,12 @@ $alloweddomains = select("user", "username='$username'", "Allowed");
 return $alloweddomains;
 }
 
+function addedon($username){
+$alloweddomains = select("user", "username='$username'", "Added_on");
+return $alloweddomains;
+}
+
+
 function domainnames($username){
 $domains = select("domain_added", "Username='$username'", "Domain_name");
 return $domains;
@@ -53,6 +60,7 @@ function getaddeddate($domainname){
 $domainadded = select("domain_added", "Domain_name='$domainname'", "Time_added");
 return $domainadded;
 }
+
 
 function getdeletiondate($domainname){
 $domaindeletion = select("domain_added", "Domain_name='$domainname'", "Time_deleted");

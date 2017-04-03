@@ -1,4 +1,7 @@
 <?php 
+include_once($SITEROOT."modules/database/connectdb.php");
+include_once($SITEROOT."modules/database/update.php");
+
 function blockuser($username){
 update("user", "Blocked", "1", "Username = '$username'");
 }

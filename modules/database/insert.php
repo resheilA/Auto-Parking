@@ -1,6 +1,8 @@
 <?php 
+ include_once("siteroot.php");
+ include_once($SITEROOT."modules/database/connectdb.php");
 
-function insertdb($table_name, $table_column, $column_values)
+ function insertdb($table_name, $table_column, $column_values)
 {   
     $string1= "" ; $string2 = ""; 
     for($i=0;$i<sizeof($table_column);$i++)
@@ -21,7 +23,16 @@ function insertdb($table_name, $table_column, $column_values)
 	$result=mysql_query($query);
 	if(! $result)
 	{
-	  die(mysql_error());
+	 echo mysql_error();
+	  echo(" <br>    <div class='alert alert-danger' role='alert'>
+        <strong>Oh snap!</strong> Record already present.Try again with some other name.
+      </div>
+   ");
 	}
-    
+    else {
+	echo '<br><div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> Successfully Done.
+      </div>';
+
+	}
 } 
