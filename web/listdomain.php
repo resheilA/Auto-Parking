@@ -25,7 +25,22 @@
 	  </div>
 	  <br>
 	  <h3>You can see your list of domain names here with other details. </h3>	<br>
-	   <div class="bs-example" data-example-id="contextual-table" style="border: 1px solid #eee">
+     </center>
+	 <br>
+						<form method='get' style='text-align:right;'>
+						<select name='orderby' style='height:40px;'>
+						<option value='Time_added'>Date Added</option>
+						<option value='Time_deleted'>Date Deleted</option>
+						<option value='Domain_name'> Domain Name</option>
+						</select>
+		                <select name='sortby' style='height:40px;'>
+						<option value='ASC'>Ascending</option>
+						<option value='DESC'>Decending</option>						
+						</select>				
+						<input type='submit' value='Sort'>
+						</form>
+	 <center>	 
+	 <div class="bs-example" data-example-id="contextual-table" style="border: 1px solid #eee">
 	 <table class="table">
       <thead>
         <tr>
@@ -41,8 +56,15 @@
 			  include ("siteroot.php");
 			  include($SITEROOT."modules/domaindetails.php");
          	  include($SITEROOT."modules/checkblock.php");
-						  
+				
+			if(!isset($_GET['orderby']))
+		      {	
 			  $arr1 = domainnames($user);
+			  }
+		    else {
+			    $arr1 = domainbyorder($user, $_GET['orderby'], $_GET['sortby']);
+			  }
+			  
 			   $i=0;$bstatus = "Unblocked";
 			  while($i < sizeof($arr1)){
 	          

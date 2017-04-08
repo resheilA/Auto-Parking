@@ -1,0 +1,266 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+@font-face {
+    font-family: 'bebasregular';
+    src: url('../fonts/BEBAS___-webfont.eot');
+    src: url('../fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BEBAS___-webfont.woff') format('woff'),
+         url('../fonts/BEBAS___-webfont.ttf') format('truetype'),
+         url('../fonts/BEBAS___-webfont.svg#bebasregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body{
+	background: url(../images/bg.jpg) no-repeat #E7E7E7;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	font-family: 'bebasregular';
+}
+.wrap{
+	width:80%;
+	margin:0 auto;
+}
+/*----start-header----*/
+.header{
+	padding:20px;
+	background: rgba(0, 0, 0, 0.36);
+}
+.logo a{
+	color:#FFF;
+	font-size:3em;
+	text-transform:uppercase;
+}
+.logo a span{
+	color:#F3D026;
+}
+/*---start-content----*/
+.content{
+	text-align:center;
+}
+.content-info h1{
+	color: #FFF;
+	font-size: 3em;
+	text-transform: uppercase;
+	line-height: 1.5em;
+	word-spacing: 2px;
+}
+.content-info h1 span{
+	color:#F3D026;
+}
+.content-info {
+	width: 59%;
+	margin: 0 auto;
+	padding: 4em 0 0 0;
+}
+/* ---------- TIMER ---------- */
+ul#countdown{text-align:center;padding-top: 15px;}
+ul#countdown span {
+	color: #FFF;
+	font-size: 4em;
+	font-weight: bold;
+	width: 80px;
+	height: 94px;
+	text-align: center;
+	display: inline-block;
+}
+ul#countdown h3{
+	color:#fff;
+}
+ul#countdown li{
+	display:inline-block;
+	width: 10%;
+}
+ul#countdown li p.timeRefDays,
+ul#countdown li p.timeRefHours,
+ul#countdown li p.timeRefMinutes,
+ul#countdown li p.timeRefSeconds {
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	font-size: 1.2em;
+	191919
+}
+.content-grid h3{
+	display: block;
+	color: #FFF;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 7px;
+}
+/*---start-notify-form----*/
+.notify{
+	text-align: center;
+	background: rgba(0, 0, 0, 0.36);
+	width: 50%;
+	margin: 2em auto 0 auto;
+	padding: 0.5em 2em 2em 2em;
+	font-family: 'bebasregular';
+}
+.notify h3{
+	font-size: 1em;
+	color: #FFF;
+	text-transform: uppercase;
+	padding: 1em 0;
+	word-spacing: 2px;
+}
+.notify input[type="text"]{
+	width:80%;
+	padding:12px;
+	border:none;
+	outline:none;
+	font-family: 'bebasregular';
+}
+.notify input[type="submit"]{
+	padding:12px;
+	border:none;
+	outline:none;
+	font-family: 'bebasregular';
+	background:#F3D026;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	color:#FFF;
+	cursor:pointer;
+}
+.notify input[type="submit"]:hover{
+	background:#fff;
+	color:#000;
+}
+/*---start-socail-icons----*/
+.social-icons h3{
+	color: #FFF;
+	font-size: 1em;
+	margin: 1em 1em 1em 1em;
+	word-spacing: 4px;
+}
+.social-icons ul li{
+	display:inline-block;
+}
+.social-iconsl ul li a{
+	display:block;
+}
+.social-icons ul li img{
+	display:block;
+}
+.social-icons ul li a{
+	background: #FFF;
+	padding: 10px;
+	border-radius: 30em;
+	margin: 5px;
+	display: block;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.social-icons ul li a:hover{
+	background:#000;
+}
+.social-icons {
+	text-align: center;
+	padding: 1em;
+}
+.copy-right{
+	text-align:center;
+	background: rgba(0, 0, 0, 0.36);
+	padding:1em 0;
+}
+.copy-right p{
+	color:#FFF;
+	word-spacing: 3px;
+}
+.copy-right p a{
+	color:#FFF;
+	padding-right:5px;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.copy-right p a:hover{
+	color:#F3D026;
+}
+/*----start-responsive-design----*/
+
+@media only screen and (max-width: 1366px) and (min-width: 1280px) {
+	.wrap{
+		width:95%;
+	}
+	.content-info {
+		width: 57%;
+	}
+}
+@media only screen and (max-width: 1280px) and (min-width: 1024px) {
+	.wrap{
+		width:95%;
+	}
+	.content-info {
+		width: 61%;
+	}
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+	.wrap{
+		width:95%;
+	}
+	.content-info {
+		width: 77%;
+	}
+	.notify input[type="text"] {
+		width: 77%;
+	}
+	ul#countdown li {
+		width: 13%;
+	}
+}
+@media only screen and (max-width: 768px) and (min-width: 640px) {
+	.wrap{
+		width:95%;
+	}
+	.content-info {
+		width: 77%;
+		padding: 2em 0 0 0;
+	}
+	.notify input[type="text"] {
+		width: 76%;
+	}
+	ul#countdown li {
+		width: 13%;
+	}
+	.notify {
+		width: 64%;
+	}
+	.content-info h1 {
+		font-size: 2.5em;
+	}
+	ul#countdown span {
+		font-size: 3em;
+	}
+}

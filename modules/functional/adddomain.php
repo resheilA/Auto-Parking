@@ -17,20 +17,20 @@ $arr2 = array($domain_name, $user, $time_add, $time_end, 0);
 
 $status = insertdb("domain_added", $arr1, $arr2);
 
-if($status){
+if($status == 1){
 //Changing the allowed number of domain names.
 $query2 = "UPDATE `user` SET `Allowed` = `Allowed` - 1 WHERE `Username` = '$user'";
 $result2=mysql_query($query2);
 
 if ($result2)
 {
-    echo "Successful";  
+ //   echo "Successful";  
     return 1;
 }
 else
 {
 
-    echo mysql_error();
+//    echo mysql_error();
     return 0;   
 }
 }
