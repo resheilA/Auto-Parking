@@ -10,7 +10,7 @@ function select($tablename,$condition,$fetch){
 											 $i=0;
 											 
 											 $num_rows = mysql_num_rows($sql_result);
-											 
+											 											
 											 if($num_rows > 1){
 											 while($row = mysql_fetch_array($sql_result))
 											 {
@@ -18,6 +18,9 @@ function select($tablename,$condition,$fetch){
 											$value[$i]=$row["$fetch"];	
 											$i++;		
 											}	
+											}
+											elseif($num_rows == 0){
+											$value = false;
 											}
 											else{
 											while($row = mysql_fetch_array($sql_result))

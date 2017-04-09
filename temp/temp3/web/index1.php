@@ -4,20 +4,36 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<php></php>
+ 
+<?php  
+
+
+if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
+if(isset($_GET['temp'])){$theme = $_GET['temp'];}else{$theme = "temp1";}
+
+$root = "/mypark/temp/$theme/web/";
+
+include("siteroot.php");
+include_once($SITEROOT."/modules/database/connectdb.php");
+include_once($SITEROOT."/modules/getwebdetails.php");
+
+$facebooklink = getfblink($domain_name);
+$twitterlink = gettwitterlink($domain_name);
+$disclaimer = getdisclaimer();
+?>
 <!DOCTYPE HTML>
 	<head>
-		<title>i'm coming Website Template | Home :: W3layouts</title>
-		<link href="css?>css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<title>Welcome to <?php echo $domain_name; ?></title>
+		<link href="<?php echo $root; ?>css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
-	    <script src="js?>js/countdown.js" type="text/javascript"></script>	
-	    <script src="js?>js/init.js" type="text/javascript"></script>
+	     <script src="<?php echo $root; ?>js/countdown.js" type="text/javascript"></script>	
+	     <script src="<?php echo $root; ?>js/init.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<!---start-wrap---->
 			<div class="header">
 				<div class="wrap">
-					<div class="logo" ><p id='websitename'><a href="#">I'am <span>coming</span></a></p></div>
+					<div class="logo" ><p><?php echo $domain_name; ?></p></div>
 				</div>
 		</div>
 		<!---start-content---->
@@ -58,15 +74,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="social-icons">
 				<h3>Catch on</h3>
 				<ul>
-					<li><a id='facebooklink' href="#" ><img src="img?>images/facebook.png" title="facebook"></a></li>
-					<li><a id='twitterlink' href="#"><img src="img?>images/twitter.png" title="Twiiter"></a></li>
+					<li><?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='$root/images/facebook.png'></a>";}?></li>
+					<li><?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='$root/images/twitter.png'></a>";}?></li>
 				</ul>
 			</div>
 			<!---End-social-icons---->
 			<!---start-copy-right---->
 			<div class="copy-right">
-		         <p id='disclaimer'></p>	
-				<p id='copyright'>&copy 2013 i'm coming.All Rights Reserved.Design by <a href="http://w3layouts.com/">w3layouts</a></p>
+		         <p><?php echo $disclaimer;?></p>	
+				<p>Copyright &copy <?php echo $domain_name; ?>&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
 			</div>
 			<!---End-copy-right---->
 		</div>

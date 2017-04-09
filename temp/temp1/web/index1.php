@@ -1,21 +1,22 @@
 <!DOCTYPE HTML>
+ 
 <?php  
-/*
-$url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];;
-//$url = 'http://mail.google.com/dhasjkdas/sadsdds/sdda/sdads.html';
-$parse = parse_url($url);
-$domain_name = ucwords($parse['host']);
-echo $domain_name;
-*/
+
 $root = "/mypark/temp/temp1/web/";
+if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
 
-if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}
+include("siteroot.php");
+include_once($SITEROOT."/modules/database/connectdb.php");
+include_once($SITEROOT."/modules/getwebdetails.php");
 
+$facebooklink = getfblink($domain_name);
+$twitterlink = gettwitterlink($domain_name);
+$disclaimer = getdisclaimer();
 ?>
 <html>
 <head>
      <title>Welcome to <?php echo $domain_name; ?></title>
-	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="<?php echo $root; ?>css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300' rel='stylesheet' type='text/css'>
@@ -24,10 +25,10 @@ if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}
 	<div class="content">
 			<div class="wrap">
 				<div class="content-grid">
-			<p><img src="images/top.png" title=""></p>
-				</div>
+			<p><img src="<?php echo $root; ?>images/top.png" title=""></p>
+			</div>
 				<div class="grid">
-		<p><img src="images/coming.png" title=""></p>
+		<p><img src="<?php echo $root; ?>images/coming.png" title=""></p>
 		<h3>We are Still Working on it.</h3>
 		
 		
@@ -35,8 +36,10 @@ if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}
 								</div>
 		<div class="clear"></div>
 		<div class="footer">
-			<p class="a"><a href='webportal.in'><img src="images/facebook.png" title=""></a><a href="#" id='twitterlink'><img src="images\twitter.png" title=""></a></p>
-        <p>We we have disclaimer here</p>
+			<p class="a">
+			<?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='$root/images/facebook.png'></a>";}?>
+			<?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='$root/images/twitter.png'></a>";}?></p>
+        <p><?php echo $disclaimer;?></p>
 		<p>Copyright &copy <?php echo $domain_name; ?>&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
 		</div>
 		<div class="clear"></div>

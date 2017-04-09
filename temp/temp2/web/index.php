@@ -4,10 +4,23 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php  
+/*
+$url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];;
+//$url = 'http://mail.google.com/dhasjkdas/sadsdds/sdda/sdads.html';
+$parse = parse_url($url);
+$domain_name = ucwords($parse['host']);
+echo $domain_name;
+*/
+$root = "/mypark/temp/temp1/web/";
+
+if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>ddede</title>
+<title>Welcome to <?php echo $domain_name; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -58,7 +71,7 @@ $(document).ready(function() {
 	  	<div class="wrap">
 		<div class="header">
 			<div class="logo">
-				<h1>Webportal.in</h1>
+				<h1><?php echo $domain_name; ?></h1>
 		   </div>
 	   </div>
 	<div class="content">
@@ -100,8 +113,8 @@ $(document).ready(function() {
    <div class="page_bottom">
    	<div class="social-icons">
    		  <ul>
-		      <li class="facebook"><a href='webportal.in'><img src="images/facebook.png" title=""></a></li>
-		      <li class="twitter"><a href='webportal.in'><img src="images/twitter.png" title=""></a></li>
+		      <li class="facebook"><a href='webportal.in'><img src="<?php echo $root;?>images/facebook.png" title=""></a></li>
+		      <li class="twitter"><a href='webportal.in'><img src="<?php echo $root;?>images/twitter.png" title=""></a></li>
 		      <li class="googleplus"><a  href="#" target="_blank"> </a></li>
 		      <li class="contact"><a  href="#" target="_blank"> </a></li>
 		      <div class="clear"></div>
@@ -109,7 +122,7 @@ $(document).ready(function() {
    	 </div>
 	  <div class="copy_right">
 	        <p>We we have disclaimer here</p>
-	        <p>Copyright 2013&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
+	        <p>Copyright &copy <?php echo $domain_name; ?>&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
      	</div>
      	<div class="clear"></div>
 	  </div>

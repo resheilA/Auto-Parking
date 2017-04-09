@@ -2,7 +2,7 @@
 <?php
 
     include ("siteroot.php");
-    $source = $SITEROOT."/temp/temp1/web/";
+    $source = $SITEROOT."/temp/temp3/web/";
 	
 	// Open a webpage
     $homepage = file_get_contents($source."index.html");

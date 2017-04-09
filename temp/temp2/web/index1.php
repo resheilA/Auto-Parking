@@ -4,15 +4,28 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<php></php>
+ 
+<?php  
+
+$root = "/mypark/temp/temp2/web/";
+if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
+
+include("siteroot.php");
+include_once($SITEROOT."/modules/database/connectdb.php");
+include_once($SITEROOT."/modules/getwebdetails.php");
+
+$facebooklink = getfblink($domain_name);
+$twitterlink = gettwitterlink($domain_name);
+$disclaimer = getdisclaimer();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Speedo Under Construction Website Template | Home :: w3layouts</title>
+<title>Welcome to <?php echo $domain_name; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css?>css/style.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.countdown.js" type="text/javascript"></script>
+<link href="<?php echo $root; ?>css/style.css" rel="stylesheet" type="text/css" media="all">
+ <script src="<?php echo $root; ?></script>
+ <script src="<?php echo $root; ?></script>
 <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
 <script>
 	// COUNTDOWN CONFIGURATION
@@ -59,7 +72,7 @@ $(document).ready(function() {
 	  	<div class="wrap">
 		<div class="header">
 			<div class="logo">
-				<h1 id='websitename'>Company Name</h1>
+				<h1><?php echo $domain_name; ?></h1>
 		   </div>
 	   </div>
 	<div class="content">
@@ -101,16 +114,16 @@ $(document).ready(function() {
    <div class="page_bottom">
    	<div class="social-icons">
    		  <ul>
-		      <li class="facebook"><a id='facebooklink' href="#"  target="_blank"> </a></li>
-		      <li class="twitter"><a id='twitterlink' href="#"  target="_blank"> </a></li>
+		      <li class="facebook"><?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='$root/images/facebook.png'></a>";}?></li>
+		      <li class="twitter"><?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='$root/images/twitter.png'></a>";}?></li>
 		      <li class="googleplus"><a  href="#" target="_blank"> </a></li>
 		      <li class="contact"><a  href="#" target="_blank"> </a></li>
 		      <div class="clear"></div>
 	     </ul>
    	 </div>
 	  <div class="copy_right">
-	        <p id='disclaimer'></p>
-	        <p id='copyright'>Company Name © All rights Reseverd | Design by  <a href="http://www.w3layouts.com">W3Layouts</a></p>
+	        <p><?php echo $disclaimer;?></p>
+	        <p>Copyright &copy <?php echo $domain_name; ?>&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
      	</div>
      	<div class="clear"></div>
 	  </div>

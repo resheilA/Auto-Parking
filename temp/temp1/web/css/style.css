@@ -341,7 +341,7 @@ top: 20px;
         font-size:0.9em;
 	}
 	button span:hover {
-		background: url(../images/arrow.png) repeat-x 32px -4px;
+		background: url(../../images/arrow.png) repeat-x 32px -4px;
 		height: 14px;
 		width: 21px;
 	}

@@ -1,0 +1,10 @@
+<php></php>
+js?> 
+css?>
+img?>
+//Maintain the order or else it will not work as the pregmatch dosen't work.
+<a id='facebooklink'
+<a id='twitterlink'
+<p id='disclaimer'></p>
+<p id='copyright'></p>
+<p id='websitename'></p>
