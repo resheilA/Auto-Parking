@@ -7,8 +7,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  
 <?php  
 
-$root = "/mypark/temp/temp2/web/";
+
 if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
+if(isset($_GET['theme'])){$theme = $_GET['theme'];}else{$theme = "temp1";}
+
+$root = "/mypark/temp/$theme/web/";
 
 include("siteroot.php");
 include_once($SITEROOT."/modules/database/connectdb.php");
@@ -114,8 +117,8 @@ $(document).ready(function() {
    <div class="page_bottom">
    	<div class="social-icons">
    		  <ul>
-		      <li class="facebook"><?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='$root/images/facebook.png'></a>";}?></li>
-		      <li class="twitter"><?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='$root/images/twitter.png'></a>";}?></li>
+		      <li class="facebook"><?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='".$root."facebook.png'></a>";}?></li>
+		      <li class="twitter"><?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='".$root."twitter.png'></a>";}?></li>
 		      <li class="googleplus"><a  href="#" target="_blank"> </a></li>
 		      <li class="contact"><a  href="#" target="_blank"> </a></li>
 		      <div class="clear"></div>

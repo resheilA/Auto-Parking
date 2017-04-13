@@ -20,5 +20,5 @@ $theme = gettheme($domain_name);
 
 if(!$theme){$theme = "temp1";}
 //	header("Location: /mypark/temp/temp1/web/");
-include("http://localhost/mypark/temp/$theme/web/index1.php?domain_name=$domain_name&temp=$theme"); 
+include("http://localhost/mypark/temp/$theme/web/index1.php?domain_name=$domain_name&theme=$theme"); 
 ?>

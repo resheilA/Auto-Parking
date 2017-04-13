@@ -1,6 +1,6 @@
 <php></php>
 js?> 
-css?>
+<link href="css?>
 img?>
 //Maintain the order or else it will not work as the pregmatch dosen't work.
 <a id='facebooklink'

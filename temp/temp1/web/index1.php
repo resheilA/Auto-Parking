@@ -2,8 +2,11 @@
  
 <?php  
 
-$root = "/mypark/temp/temp1/web/";
+
 if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
+if(isset($_GET['theme'])){$theme = $_GET['theme'];}else{$theme = "temp1";}
+
+$root = "/mypark/temp/$theme/web/";
 
 include("siteroot.php");
 include_once($SITEROOT."/modules/database/connectdb.php");
@@ -37,8 +40,8 @@ $disclaimer = getdisclaimer();
 		<div class="clear"></div>
 		<div class="footer">
 			<p class="a">
-			<?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='$root/images/facebook.png'></a>";}?>
-			<?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='$root/images/twitter.png'></a>";}?></p>
+			<?php if(isset($facebooklink)){echo "<a href='$facebooklink'><img src='".$root."images/facebook.png'></a>";}?>
+			<?php if(isset($twitterlink)){echo "<a href='$twitterlink'><img src='".$root."images/twitter.png'></a>";}?></p>
         <p><?php echo $disclaimer;?></p>
 		<p>Copyright &copy <?php echo $domain_name; ?>&nbspTemplate by <a href="http://w3layouts.com"> w3layouts.com</a><br>Developed By Moose</p>
 		</div>

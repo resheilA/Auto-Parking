@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 if(isset($_GET['domain_name'])){$domain_name = $_GET['domain_name'];}else{$domain_name = "Moose";}
-if(isset($_GET['temp'])){$theme = $_GET['temp'];}else{$theme = "temp1";}
+if(isset($_GET['theme'])){$theme = $_GET['theme'];}else{$theme = "temp1";}
 
 $root = "/mypark/temp/$theme/web/";
 

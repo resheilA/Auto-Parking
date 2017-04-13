@@ -1,0 +1,38 @@
+<php></php>
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Free Mobile Website Templates Designs - w3layouts.com</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css?>css/style.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Mr+Dafoe' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="content">
+				<div class="logo">
+					<a href="index.html"><h1 id='websitename'>fotos</h1></a>
+				</div>
+				<p>Be ready, we are launching soon &#33;</p>
+				
+				<div class="footer">
+				<div class="social-icons">
+					   <a id='facebooklink' href="#"><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><img src="img/f.png"></span></a>
+				        <a id='twitterlink' href="#">  <span class="simptip-position-bottom simptip-movable" data-tooltip="Twitter"><img src="img/t1.png"></span></a>
+					<div class="clear"> </div>
+				</div>
+				<p id='disclaimer'></p>
+				<p id='copyright' class="copy">&#169; 2013 Designed by<a href="http://w3layouts.com" target="_blank">&nbsp;w3layouts</a> </p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
